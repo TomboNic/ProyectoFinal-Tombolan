@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 from ProyectoCoder.views import saludar, ProbarTemplate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludar/<nombre>', saludar),
-    path('probarTemplate/', ProbarTemplate),
+    path('', include('AppCoder.urls')),
 ]
