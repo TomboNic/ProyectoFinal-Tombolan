@@ -1,9 +1,10 @@
 from django.db import models
+from django.db.models.fields import BooleanField
 
 # Create your models here.
 class FanFutbol(models.Model):
     Nombre = models.CharField(max_length=15)
-    es_o_no = BooleanField()
+    es_o_no =  BooleanField()
     equipo = models.CharField(max_length=15)
 
 class FanVoley(models.Model):
