@@ -1,0 +1,17 @@
+{% extends 'AppCoder/inicio.html' %}
+
+{%block headblock%}
+    <title> Basquet </title>
+{%endblock headblock%}
+
+{%block bodyblock%}
+    <h1> Basquet </h1>
+
+    <form action={% url 'FanBasquet' %} method="POST"> 
+        {{formulario.as_table}}
+        <input type="submit" value="Crear">
+        {% csrf_token %}
+        </input>
+    </form>
+
+{%endblock bodyblock%}

@@ -1,0 +1,35 @@
+{% extends 'AppCoder/inicio.html' %}
+
+{%block headblock%}
+    <title> voley </title>
+{%endblock headblock%}
+
+{%block bodyblock%}
+    <h1> voley </h1>
+
+    <form action={% url 'FanVoley' %} method="GET"> 
+        <input type="text" name="nombre" placeholder="Nombre a buscar">
+        <input type="submit" value="Buscar">
+        </input>
+    </form>
+
+
+    <ul>
+    {% if  FansVo%}
+
+        {% for fans in FansVo %}
+        <li>
+            {{fans}}
+        </li>
+        {% endfor %}
+        
+   {% elif Error%}
+        <h3>{{Error}}</h3>
+    {% else %}
+        <h3>No hay coincidencias </h3>
+    {% endif %}
+    </ul>
+
+
+
+{%endblock bodyblock%}
